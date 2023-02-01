@@ -5,7 +5,18 @@ const URI =
   'https://m.media-amazon.com/images/M/MV5BMWRiZGQ1NDMtODQ2OS00MDlhLWJkZGYtM2ZmNjlhZThjOWRmXkEyXkFqcGdeQXVyMTkxNjUyNQ@@._V1_FMjpg_UX1000_.jpg';
 
 
-export default function App() {
+const App = () => {
+  const MovieCard = () => (
+    <View>
+      <Image
+        source={{
+          uri: URI,
+        }}
+        style={{width: 200, height: 350, marginRight: 8}}
+      />
+      <Text>Sing 2</Text>
+    </View>
+  );
   return (
     <View style={styles.container}>
       <Text>MOST POPULAR MOVIES</Text>
@@ -20,17 +31,7 @@ export default function App() {
   );
 }
 
-const MovieCard = () => (
-  <View>
-    <Image
-      source={{
-        uri: URI,
-      }}
-      style={{width: 200, height: 350, marginRight: 8}}
-    />
-    <Text>Sing 2</Text>
-  </View>
-);
+export default App;
 
 const styles = StyleSheet.create({
   container: {
