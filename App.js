@@ -1,43 +1,23 @@
-import { StatusBar } from 'expo-status-bar';
-import { Image, ScrollView, StyleSheet, Text, View } from 'react-native';
+import React from 'react';
+import { View, Text, Image, ScrollView } from 'react-native';
 
-const URI =
-  'https://m.media-amazon.com/images/M/MV5BMWRiZGQ1NDMtODQ2OS00MDlhLWJkZGYtM2ZmNjlhZThjOWRmXkEyXkFqcGdeQXVyMTkxNjUyNQ@@._V1_FMjpg_UX1000_.jpg';
-
-
-const App = () => {
-  const MovieCard = () => (
-    <View>
-      <Image
-        source={{
-          uri: URI,
-        }}
-        style={{width: 200, height: 350, marginRight: 8}}
-      />
+export default function App() {
+	const MovieCard = () => (
+		<View>
+			<Image source={{ uri: "https://m.media-amazon.com/images/M/MV5BMWRiZGQ1NDMtODQ2OS00MDlhLWJkZGYtM2ZmNjlhZThjOWRmXkEyXkFqcGdeQXVyMTkxNjUyNQ@@._V1_FMjpg_UX1000_.jpg" }} style={{ width: 200, height: 350, marginRight: 8 }} />
       <Text>Sing 2</Text>
     </View>
-  );
+	)
+
   return (
-    <View style={styles.container}>
+    <View>
       <Text>MOST POPULAR MOVIES</Text>
-      <ScrollView horizontal>
-        <MovieCard />
-        <MovieCard />
-        <MovieCard />
-        <MovieCard />
-      </ScrollView>
-      <StatusBar style="auto" />
+	    <ScrollView horizontal={true}>
+				<MovieCard />
+				<MovieCard />
+				<MovieCard />
+				<MovieCard />
+	    </ScrollView>
     </View>
-  );
+	);
 }
-
-export default App;
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
